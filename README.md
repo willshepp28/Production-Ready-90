@@ -3,7 +3,6 @@
 A focused 90-day sprint to sharpen full-stack engineering skills and ship production-ready apps using React, React Native, Rails, Django, GraphQL, and Postgres.
 
 **Timeline:** November 3 – February 1  
-**Location:** Charleston, SC  
 
 > Code with precision. Ship with purpose.
 
