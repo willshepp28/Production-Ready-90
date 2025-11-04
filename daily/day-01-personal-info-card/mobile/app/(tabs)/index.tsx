@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { Alert, Button, Text, TouchableOpacity, View } from "react-native";
 
 import "../../global.css";
 
@@ -11,6 +11,10 @@ export default function HomeScreen() {
       <TouchableOpacity className="mt-4 rounded-xl bg-primary px-4 py-2">
         <Text className="text-white font-semibold">Get Started</Text>
       </TouchableOpacity>
+      <Button
+        title="📋Edit Profile"
+        onPress={() => Alert.alert("You are editing profile")}
+      />
     </View>
   );
 }
