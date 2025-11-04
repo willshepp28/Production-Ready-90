@@ -30,9 +30,9 @@ Each weekend delivers a complete, working feature.
 
 | Metric | Status |
 |:--|:--|
-| Current Day | 0 / 90 |
-| Projects Completed | 0 / 90 |
-| Current Streak | 0 days |
+| Current Day | 1 / 90 |
+| Projects Completed | 1 / 90 |
+| Current Streak | 1 days |
 
 ---
 
