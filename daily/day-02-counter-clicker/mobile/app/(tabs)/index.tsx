@@ -32,6 +32,9 @@ export default function HomeScreen() {
       <Pressable onPress={() => decrement()}>
         <Text>Decrement Count</Text>
       </Pressable>
+      <Pressable onPress={() => setCount(0)}>
+        <Text>Reset Count</Text>
+      </Pressable>
     </View>
   );
 }
