@@ -5,9 +5,9 @@ import "../../global.css";
 export default function HomeScreen() {
   return (
     <View className="flex-1 items-center justify-center bg-background">
-      <Text className="text-2xl font-bold text-primary">
-        Favorite Foods List
-      </Text>
+      <Text className="font-bold text-primary text-8xl">🍽️</Text>
+      <Text className="font-bold text-3xl">No Foods Yet!</Text>
+      <Text>Tap the + button below to add your favorite foods to the list</Text>
       <TouchableOpacity className="mt-4 rounded-xl bg-primary px-4 py-2">
         <Text className="text-white font-semibold">Get Started</Text>
       </TouchableOpacity>
