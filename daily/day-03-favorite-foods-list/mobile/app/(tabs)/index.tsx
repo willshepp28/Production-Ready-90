@@ -14,6 +14,21 @@ type NoFoodsProps = {
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+type AddFoodButtonProps = {
+  setVisible: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const AddFoodButton = ({ setVisible }: AddFoodButtonProps) => {
+  return (
+    <Pressable
+      className="bg-blue-700 rounded-full p-12 mt-5"
+      onPress={() => setVisible(true)}
+    >
+      <Text className="text-white font-bold text-2xl">+</Text>
+    </Pressable>
+  );
+};
+
 const AddFoodModal = ({
   shouldBeVisible,
   setVisible,
@@ -22,12 +37,6 @@ const AddFoodModal = ({
   const [input, setInput] = useState("");
 
   const handleSubmit = () => {
-    /**Takes the input and creates new food
-     *
-     * 1. Valid input is a valid string
-     * 2. Add inputs to favoriteFoods array using AddNewFoods
-     * 3. setVisible(false)
-     */
     if (!input) {
       Alert.alert("Please enter valid food");
       return;
@@ -75,12 +84,6 @@ const NoFoods = ({ setVisible }: NoFoodsProps) => (
     <Text className="font-bold text-primary text-8xl">🍽️</Text>
     <Text className="font-bold text-3xl">No Foods Yet!</Text>
     <Text>Tap the + button below to add your favorite foods to the list</Text>
-    <Pressable
-      className="bg-blue-700 rounded-full p-12 mt-5"
-      onPress={() => setVisible(true)}
-    >
-      <Text className="text-white font-bold text-2xl">+</Text>
-    </Pressable>
   </View>
 );
 
@@ -91,10 +94,13 @@ export default function HomeScreen() {
   return (
     <View className="flex-1 items-center justify-center">
       {foodCount ? (
-        <Text className="text-red">You have foods</Text>
+        <View>
+          <Text className="text-red">You have foods</Text>
+        </View>
       ) : (
         <NoFoods setVisible={setVisible} />
       )}
+      <AddFoodButton setVisible={setVisible} />
       <AddFoodModal
         shouldBeVisible={visible}
         setVisible={setVisible}

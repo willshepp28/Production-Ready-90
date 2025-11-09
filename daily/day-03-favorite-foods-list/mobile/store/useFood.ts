@@ -7,15 +7,17 @@ type Food = {
 
 type FoodStore = {
   favoriteFoods: Food[];
-  addNewFood: (name: Food) => void;
+  addNewFood: (name: string) => void;
 };
 
 const useFoodStore = create<FoodStore>((set) => ({
   favoriteFoods: [],
-  addNewFood: (food: Food) => {
-    return set((state) => ({
-      favoriteFoods: [...state.favoriteFoods, food],
-    }));
+  addNewFood: (name) => {
+    set((state) => {
+      const id = state.favoriteFoods.length + 1;
+      const favoriteFood: Food = { id, name };
+      return { favoriteFoods: [...state.favoriteFoods, favoriteFood] };
+    });
   },
 }));
 
