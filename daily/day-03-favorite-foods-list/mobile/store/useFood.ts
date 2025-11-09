@@ -7,6 +7,7 @@ type Food = {
 type FoodStore = {
   favoriteFoods: Food[];
   foodCount: number;
+  addNewFood: (name: Food) => void;
 };
 
 const useFoodStore = create<FoodStore>((set) => ({
@@ -14,8 +15,7 @@ const useFoodStore = create<FoodStore>((set) => ({
   foodCount: 0,
   addNewFood: (food: Food) => {
     return set((state) => ({
-      favoriteFoods: [...state.favoriteFoods, food],
-      foodCount: state.favoriteFoods.length + 1,
+      favoriteFoods: [...state.favoriteFoods, food]
     }));
   },
 }));
