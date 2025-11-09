@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-type Food = {
+export type Food = {
   id: number;
   name: string;
 };

@@ -1,6 +1,14 @@
 import useFoodStore from "@/store/useFood";
 import { useState } from "react";
-import { Alert, Modal, Pressable, Text, TextInput, View } from "react-native";
+import {
+  Alert,
+  FlatList,
+  Modal,
+  Pressable,
+  Text,
+  TextInput,
+  View,
+} from "react-native";
 
 import "../../global.css";
 
@@ -95,7 +103,16 @@ export default function HomeScreen() {
     <View className="flex-1 items-center justify-center">
       {foodCount ? (
         <View>
-          <Text className="text-red">You have foods</Text>
+          <FlatList
+            data={favoriteFoods}
+            keyExtractor={(item) => String(item.id)}
+            renderItem={({ item }) => (
+              <View className="py-5 w-full">
+                <Text className="font-bold text-3xl">{item.name}</Text>
+              </View>
+            )}
+            contentContainerStyle={{ paddingBottom: 120 }}
+          />
         </View>
       ) : (
         <NoFoods setVisible={setVisible} />
