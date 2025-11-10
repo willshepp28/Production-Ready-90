@@ -107,7 +107,8 @@ export default function HomeScreen() {
             data={favoriteFoods}
             keyExtractor={(item) => String(item.id)}
             renderItem={({ item }) => (
-              <View className="py-5 w-full">
+              <View className="py-5 w-ful h-20">
+                <Text>{item.photo}</Text>
                 <Text className="font-bold text-3xl">{item.name}</Text>
               </View>
             )}
