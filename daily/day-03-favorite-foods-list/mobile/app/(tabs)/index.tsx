@@ -97,7 +97,7 @@ const NoFoods = ({ setVisible }: NoFoodsProps) => (
 );
 
 export default function HomeScreen() {
-  const { favoriteFoods, addNewFood } = useFoodStore();
+  const { favoriteFoods, addNewFood, removeFood } = useFoodStore();
   const [visible, setVisible] = useState(false);
   const foodCount = favoriteFoods.length;
   return (
@@ -111,6 +111,12 @@ export default function HomeScreen() {
               <View className="py-5 w-ful h-20 flex-row gap-3 border-2 border-gray-300 rounded-lg p-4">
                 <Text>{item.photo}</Text>
                 <Text className="font-bold text-3xl">{item.name}</Text>
+                <Pressable
+                  className="bg-red-400"
+                  onPress={() => removeFood(item.id)}
+                >
+                  <Text>🗑️</Text>
+                </Pressable>
               </View>
             )}
             contentContainerStyle={{ paddingBottom: 120 }}
