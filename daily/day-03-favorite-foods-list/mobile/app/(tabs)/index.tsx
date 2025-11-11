@@ -52,6 +52,7 @@ const AddFoodModal = ({
 
     addNewFood(input);
     setVisible(false);
+    setInput("");
   };
 
   return (
@@ -100,14 +101,14 @@ export default function HomeScreen() {
   const [visible, setVisible] = useState(false);
   const foodCount = favoriteFoods.length;
   return (
-    <View className="flex-1 items-center justify-center">
+    <View className="flex-1 items-center justify-center mt-24">
       {foodCount ? (
-        <View>
+        <View className="flex-1 items-center justify-center border-red-500 ">
           <FlatList
             data={favoriteFoods}
             keyExtractor={(item) => String(item.id)}
             renderItem={({ item }) => (
-              <View className="py-5 w-ful h-20">
+              <View className="py-5 w-ful h-20 flex-row gap-3 border-2 border-gray-300 rounded-lg p-4">
                 <Text>{item.photo}</Text>
                 <Text className="font-bold text-3xl">{item.name}</Text>
               </View>
