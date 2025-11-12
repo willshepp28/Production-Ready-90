@@ -1,0 +1,40 @@
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+
+# Environment variables
+.env
+
+# Migrations cache
+migrations/__pycache__/
+instance/
+
+# SQLite DB (if you test locally without Postgres)
+*.sqlite3
+*.db
+
+# VSCode / JetBrains IDE files
+.vscode/
+.idea/
+
+# macOS system files
+.DS_Store
+
+# Docker volumes
+pgdata/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs
+*.log

@@ -1,0 +1,7 @@
+#!/Users/willsheppard/Documents/02_Code/02_Portfolio/ProductionReady90/daily/day-03-favorite-foods-list/api/python/v1/.venv/bin/python3.11
+import sys
+from flask.cli import main
+if __name__ == '__main__':
+    if sys.argv[0].endswith('.exe'):
+        sys.argv[0] = sys.argv[0][:-4]
+    sys.exit(main())
