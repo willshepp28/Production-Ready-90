@@ -1,0 +1,21 @@
+# Flask core
+Flask==3.0.0
+Werkzeug==3.0.1
+
+# Database
+Flask-SQLAlchemy==3.1.1
+psycopg2-binary==2.9.9
+Flask-Migrate==4.0.5
+
+# CORS support
+Flask-CORS==4.0.0
+
+# Environment variables
+python-dotenv==1.0.0
+
+# Development tools
+flask-shell-ipython==0.4.1
+
+# Testing (optional)
+pytest==7.4.3
+pytest-cov==4.1.0
