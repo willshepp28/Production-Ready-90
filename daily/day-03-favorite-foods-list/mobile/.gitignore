@@ -29,8 +29,18 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# Environment files (keep .env.example)
+.env
+.env.local
+.env.development
+.env.staging
+.env.production
 .env*.local
+
+# Secrets and sensitive files
+service-account-key.json
+google-services.json
+GoogleService-Info.plist
 
 # typescript
 *.tsbuildinfo
