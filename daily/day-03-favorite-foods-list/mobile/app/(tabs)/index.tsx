@@ -77,8 +77,11 @@ const AddFoodModal = ({
                 value={input}
                 onChangeText={(text) => setInput(text)}
               />
-              <Pressable onPress={() => handleSubmit()}>
-                <Text>Add to List</Text>
+              <Pressable
+                onPress={() => handleSubmit()}
+                className="bg-green-500 p-3P"
+              >
+                <Text className="text-white">Add to List</Text>
               </Pressable>
             </View>
           </View>
@@ -97,7 +100,7 @@ const NoFoods = ({ setVisible }: NoFoodsProps) => (
 );
 
 export default function HomeScreen() {
-  const { favoriteFoods, addNewFood, removeFood } = useFoodStore();
+  const { favoriteFoods, addNewFood, removeFood, updateFood } = useFoodStore();
   const [visible, setVisible] = useState(false);
   const foodCount = favoriteFoods.length;
   return (
@@ -110,7 +113,12 @@ export default function HomeScreen() {
             renderItem={({ item }) => (
               <View className="py-5 w-ful h-20 flex-row gap-3 border-2 border-gray-300 rounded-lg p-4">
                 <Text>{item.photo}</Text>
-                <Text className="font-bold text-3xl">{item.name}</Text>
+                {/* <Text className="font-bold text-3xl">{item.name}</Text> */}
+                <TextInput
+                  className="font-bold text-3xl"
+                  onChangeText={(newText) => updateFood(item.id, newText)}
+                  value={item.name}
+                />
                 <Pressable
                   className="bg-red-400"
                   onPress={() => removeFood(item.id)}
